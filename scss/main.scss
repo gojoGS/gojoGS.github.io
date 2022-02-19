@@ -1,7 +1,7 @@
 $et-primary: #63779c;
-$et-secondary: #64ac8e;
-$et-bg: #be8863;
-$et-dark: #302920;
+$et-primary-dark: #3f5681;
+$et-primary-light: #c1cadc;
+$et-bg: #213964;
 $ease-out: linear-gradient(
     to top,
     hsl(0, 0%, 0%) 0%,
@@ -25,22 +25,12 @@ $ease-out: linear-gradient(
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap");
 
 @keyframes button-hover {
-    0% {
-        background-color: scale-color(
-            $color: $et-dark,
-            $saturation: 0%,
-            $lightness: 0%
-        );
-        color: scale-color($color: $et-bg, $saturation: 0%, $lightness: 0%);
+    from {
+        background-color: $et-primary;
     }
-    100% {
-        background-color: scale-color(
-            $color: $et-dark,
-            $saturation: 0%,
-            $lightness: 10%
-        );
+    to {
+        background-color: $et-primary-dark;
         box-shadow: 0 4px 10px 0 #0009;
-        color: scale-color($color: $et-bg, $saturation: 30%, $lightness: 0%);
     }
 }
 
@@ -53,22 +43,23 @@ $ease-out: linear-gradient(
     }
 }
 
+html {
+    scrollbar-color: white $et-bg;
+    scrollbar-width: auto;
+    &::-webkit-scrollbar {
+        background-color: $et-bg;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: white;
+    }
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
-}
-
-html {
-    scrollbar-color: $et-bg $et-dark;
-    scrollbar-width: auto;
-    &::-webkit-scrollbar {
-        background-color: $et-dark;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: $et-bg;
-    }
-    scroll-behavior: smooth;
+    background-color: $et-primary;
 }
 
 .opening-image {
@@ -82,6 +73,7 @@ html {
     justify-content: center;
     align-items: center;
     h1 {
+        text-align: center;
         color: white;
         font-size: 10vh;
         font-family: "Montserrat";
@@ -113,17 +105,15 @@ nav {
         display: flex;
         border-radius: 1rem;
         flex: 0;
-        background-color: rgba($et-bg, $alpha: 0.6);
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
         li {
             cursor: pointer;
             font-family: "Montserrat";
             list-style-type: none;
             text-align: center;
-            background-color: $et-dark;
-            color: $et-bg;
+            color: white;
             border-radius: 1rem;
             padding: 1rem;
             font-size: 5vh;
@@ -131,46 +121,35 @@ nav {
                 animation-name: button-hover;
                 animation-duration: 0.5s;
                 box-shadow: 0 4px 10px 0 #0009;
-                background-color: scale-color(
-                    $color: $et-dark,
-                    $saturation: 0%,
-                    $lightness: 10%
-                );
-                color: scale-color(
-                    $color: $et-bg,
-                    $saturation: 30%,
-                    $lightness: 0%
-                );
+                background-color: $et-primary-dark;
             }
         }
     }
     * {
-        margin: 2rem;
-        font-size: 2vw;
+        margin: 1rem;
     }
 }
 
 main {
-    margin: 2rem;
-    width: 80%;
+    margin: 1rem;
     flex: 4;
 }
 
 .article {
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 1rem;
-    background-color: rgba($et-dark, 0.89);
+    background-color: $et-primary-light;
     font-family: "Montserrat";
     margin-bottom: 2rem;
     &::first-letter {
         font-size: 2vw;
     }
     h2 {
-        color: $et-bg;
+        color: $et-primary-dark;
         font-size: 8vh;
     }
     p {
-        color: white;
+        color: $et-primary;
         font-size: 6vh;
         line-height: 6vh;
         text-align: justify;

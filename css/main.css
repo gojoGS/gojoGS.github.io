@@ -1,13 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap");
 @keyframes button-hover {
-  0% {
-    background-color: #302920;
-    color: #be8863;
+  from {
+    background-color: #63779c;
   }
-  100% {
-    background-color: #4a3f31;
+  to {
+    background-color: #3f5681;
     box-shadow: 0 4px 10px 0 #0009;
-    color: #d28450;
   }
 }
 @keyframes down-icon-hover {
@@ -18,22 +16,23 @@
     color: #63779c;
   }
 }
-body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
-
 html {
-  scrollbar-color: #be8863 #302920;
+  scrollbar-color: white #213964;
   scrollbar-width: auto;
   scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
-  background-color: #302920;
+  background-color: #213964;
 }
 html::-webkit-scrollbar-thumb {
-  background-color: #be8863;
+  background-color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #63779c;
 }
 
 .opening-image {
@@ -48,6 +47,7 @@ html::-webkit-scrollbar-thumb {
   align-items: center;
 }
 .opening-image h1 {
+  text-align: center;
   color: white;
   font-size: 10vh;
   font-family: "Montserrat";
@@ -79,9 +79,8 @@ nav .container {
   display: flex;
   border-radius: 1rem;
   flex: 0;
-  background-color: rgba(190, 136, 99, 0.6);
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 nav .container li {
@@ -89,8 +88,7 @@ nav .container li {
   font-family: "Montserrat";
   list-style-type: none;
   text-align: center;
-  background-color: #302920;
-  color: #be8863;
+  color: white;
   border-radius: 1rem;
   padding: 1rem;
   font-size: 5vh;
@@ -99,24 +97,21 @@ nav .container li:hover {
   animation-name: button-hover;
   animation-duration: 0.5s;
   box-shadow: 0 4px 10px 0 #0009;
-  background-color: #4a3f31;
-  color: #d28450;
+  background-color: #3f5681;
 }
 nav * {
-  margin: 2rem;
-  font-size: 2vw;
+  margin: 1rem;
 }
 
 main {
-  margin: 2rem;
-  width: 80%;
+  margin: 1rem;
   flex: 4;
 }
 
 .article {
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 1rem;
-  background-color: rgba(48, 41, 32, 0.89);
+  background-color: #c1cadc;
   font-family: "Montserrat";
   margin-bottom: 2rem;
 }
@@ -124,11 +119,11 @@ main {
   font-size: 2vw;
 }
 .article h2 {
-  color: #be8863;
+  color: #3f5681;
   font-size: 8vh;
 }
 .article p {
-  color: white;
+  color: #63779c;
   font-size: 6vh;
   line-height: 6vh;
   text-align: justify;
