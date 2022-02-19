@@ -66,6 +66,8 @@ $l-ease-out: linear-gradient(
     }
 
     .opening-image {
+        background: $l-ease-out, url("../public/img/bg_crop.png");
+
         h1 {
             color: $l-text-header;
         }
