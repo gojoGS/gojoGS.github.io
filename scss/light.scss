@@ -1,0 +1,97 @@
+$l-background-primary: white;
+$l-background-secondary: #3f5681;
+$l-text-primary: white;
+$l-text-secondary: #63779c;
+$l-text-header: white;
+
+$l-ease-out: linear-gradient(
+    to top,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.987) 8.1%,
+    hsla(0, 0%, 0%, 0.951) 15.5%,
+    hsla(0, 0%, 0%, 0.896) 22.5%,
+    hsla(0, 0%, 0%, 0.825) 29%,
+    hsla(0, 0%, 0%, 0.741) 35.3%,
+    hsla(0, 0%, 0%, 0.648) 41.2%,
+    hsla(0, 0%, 0%, 0.55) 47.1%,
+    hsla(0, 0%, 0%, 0.45) 52.9%,
+    hsla(0, 0%, 0%, 0.352) 58.8%,
+    hsla(0, 0%, 0%, 0.259) 64.7%,
+    hsla(0, 0%, 0%, 0.175) 71%,
+    hsla(0, 0%, 0%, 0.104) 77.5%,
+    hsla(0, 0%, 0%, 0.049) 84.5%,
+    hsla(0, 0%, 0%, 0.013) 91.9%,
+    hsla(0, 0%, 0%, 0) 100%
+);
+
+@keyframes l-button-hover {
+    from {
+        background-color: $l-background-primary;
+        color: $l-text-secondary;
+        box-shadow: 0 0 0 0 #0000;
+    }
+    to {
+        background-color: $l-background-secondary;
+        color: $l-text-primary;
+        box-shadow: 0 4px 10px 0 #0009;
+    }
+}
+
+@keyframes l-down-icon-hover {
+    from {
+        color: $l-text-primary;
+    }
+    to {
+        color: $l-text-secondary;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html {
+        scrollbar-color: $l-background-secondary $l-background-primary;
+        &::-webkit-scrollbar {
+            background-color: $l-background-primary;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $l-background-secondary;
+        }
+    }
+
+    body {
+        background-color: $l-background-primary;
+    }
+
+    .clickable {
+        color: $l-text-primary;
+    }
+
+    .opening-image {
+        h1 {
+            color: $l-text-header;
+        }
+    }
+
+    .icon-tabler-arrow-bar-down {
+        color: $l-text-header;
+        &:hover {
+            color: $l-text-secondary;
+        }
+    }
+
+    .nav-item {
+        color: $l-text-secondary;
+        &:hover {
+            box-shadow: 0 4px 10px 0 #0009;
+            background-color: $l-background-secondary;
+            color: $l-text-primary;
+        }
+    }
+
+    .article {
+        background-color: $l-background-secondary;
+        color: $l-text-primary;
+        h2 {
+            color: $l-text-header;
+        }
+    }
+}

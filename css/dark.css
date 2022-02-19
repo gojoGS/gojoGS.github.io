@@ -1,0 +1,49 @@
+@media (prefers-color-scheme: dark) {
+  html {
+    scrollbar-color: #3f5681 #0f1520;
+  }
+  html::-webkit-scrollbar {
+    background-color: #0f1520;
+  }
+  html::-webkit-scrollbar-thumb {
+    background-color: #3f5681;
+  }
+
+  body {
+    background-color: #0f1520;
+  }
+
+  .clickable {
+    color: #0f1520;
+  }
+
+  .opening-image h1 {
+    color: #93a2be;
+  }
+
+  .icon-tabler-arrow-bar-down {
+    color: #93a2be;
+  }
+  .icon-tabler-arrow-bar-down:hover {
+    color: #63779c;
+  }
+
+  .nav-item {
+    color: #63779c;
+  }
+  .nav-item:hover {
+    box-shadow: 0 4px 10px 0 #0009;
+    background-color: #3f5681;
+    color: #0f1520;
+  }
+
+  .article {
+    background-color: #3f5681;
+    color: #0f1520;
+  }
+  .article h2 {
+    color: #93a2be;
+  }
+}
+
+/*# sourceMappingURL=dark.css.map */

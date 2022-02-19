@@ -1,53 +1,6 @@
-$et-primary: #63779c;
-$et-primary-dark: #3f5681;
-$et-primary-light: #c1cadc;
-$et-secondary: #64ac8e;
-$et-secondary-dark: #3e916d;
-$et-secondary-light: #c7e7d9;
-$et-bg: #213964;
-$ease-out: linear-gradient(
-    to top,
-    hsl(0, 0%, 0%) 0%,
-    hsla(0, 0%, 0%, 0.987) 8.1%,
-    hsla(0, 0%, 0%, 0.951) 15.5%,
-    hsla(0, 0%, 0%, 0.896) 22.5%,
-    hsla(0, 0%, 0%, 0.825) 29%,
-    hsla(0, 0%, 0%, 0.741) 35.3%,
-    hsla(0, 0%, 0%, 0.648) 41.2%,
-    hsla(0, 0%, 0%, 0.55) 47.1%,
-    hsla(0, 0%, 0%, 0.45) 52.9%,
-    hsla(0, 0%, 0%, 0.352) 58.8%,
-    hsla(0, 0%, 0%, 0.259) 64.7%,
-    hsla(0, 0%, 0%, 0.175) 71%,
-    hsla(0, 0%, 0%, 0.104) 77.5%,
-    hsla(0, 0%, 0%, 0.049) 84.5%,
-    hsla(0, 0%, 0%, 0.013) 91.9%,
-    hsla(0, 0%, 0%, 0) 100%
-);
+@import "./light.scss", "./dark.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap");
-
-@keyframes button-hover {
-    from {
-        background-color: white;
-        color: $et-primary;
-        box-shadow: 0 0 0 0 #0000;
-    }
-    to {
-        background-color: $et-primary-dark;
-        color: white;
-        box-shadow: 0 4px 10px 0 #0009;
-    }
-}
-
-@keyframes down-icon-hover {
-    from {
-        color: white;
-    }
-    to {
-        color: $et-primary;
-    }
-}
 
 @keyframes link-hover {
     0% {
@@ -63,14 +16,7 @@ $ease-out: linear-gradient(
 
 html {
     font-family: "Montserrat";
-    scrollbar-color: $et-primary-dark white;
     scrollbar-width: auto;
-    &::-webkit-scrollbar {
-        background-color: white;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: $et-primary-dark;
-    }
     scroll-behavior: smooth;
     a {
         text-decoration: none;
@@ -84,12 +30,10 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: white;
 }
 
 .clickable {
     font-weight: 600;
-    color: white;
 
     &:hover {
         animation-name: link-hover;
@@ -101,7 +45,7 @@ body {
 .opening-image {
     width: 100%;
     height: 100vh;
-    background: $ease-out, url("../public/img/bg_crop.png");
+    background: $l-ease-out, url("../public/img/bg_crop.png");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -110,7 +54,6 @@ body {
     align-items: center;
     h1 {
         text-align: center;
-        color: white;
         font-size: 10vh;
         align-self: flex-end;
         padding: 1rem;
@@ -119,11 +62,9 @@ body {
         display: inline-flex;
     }
     .icon-tabler-arrow-bar-down {
-        color: white;
         &:hover {
-            animation-name: down-icon-hover;
+            animation-name: l-down-icon-hover;
             animation-duration: 0.5s;
-            color: $et-primary;
         }
     }
 }
@@ -136,32 +77,29 @@ body {
 nav {
     flex: 0.5;
     margin: 0rem 1rem 1rem 1rem;
-    .container {
+    .nav-container {
         display: flex;
         border-radius: 1rem;
         flex: 0;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        li {
-            cursor: pointer;
-            list-style-type: none;
-            text-align: center;
-            color: $et-primary;
-            border-radius: 1rem;
-            padding: 1rem;
-            font-size: 5vh;
-            &:hover {
-                animation-name: button-hover;
-                animation-duration: 0.5s;
-                box-shadow: 0 4px 10px 0 #0009;
-                background-color: $et-primary-dark;
-                color: white;
-            }
-        }
     }
     * {
         margin: 1rem;
+    }
+}
+
+.nav-item {
+    cursor: pointer;
+    list-style-type: none;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 5vh;
+    &:hover {
+        animation-name: l-button-hover;
+        animation-duration: 0.5s;
     }
 }
 
@@ -173,12 +111,9 @@ main {
 .article {
     padding: 1rem;
     border-radius: 1rem;
-    background-color: $et-primary-dark;
     margin-bottom: 2rem;
-    color: white;
     font-size: 6vh;
     h2 {
-        color: white;
         font-size: 8vh;
         line-height: 8vh;
         margin: 1rem 0;

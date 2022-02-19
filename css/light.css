@@ -1,0 +1,69 @@
+@keyframes l-button-hover {
+  from {
+    background-color: white;
+    color: #63779c;
+    box-shadow: 0 0 0 0 #0000;
+  }
+  to {
+    background-color: #3f5681;
+    color: white;
+    box-shadow: 0 4px 10px 0 #0009;
+  }
+}
+@keyframes l-down-icon-hover {
+  from {
+    color: white;
+  }
+  to {
+    color: #63779c;
+  }
+}
+@media (prefers-color-scheme: light) {
+  html {
+    scrollbar-color: #3f5681 white;
+  }
+  html::-webkit-scrollbar {
+    background-color: white;
+  }
+  html::-webkit-scrollbar-thumb {
+    background-color: #3f5681;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  .clickable {
+    color: white;
+  }
+
+  .opening-image h1 {
+    color: white;
+  }
+
+  .icon-tabler-arrow-bar-down {
+    color: white;
+  }
+  .icon-tabler-arrow-bar-down:hover {
+    color: #63779c;
+  }
+
+  .nav-item {
+    color: #63779c;
+  }
+  .nav-item:hover {
+    box-shadow: 0 4px 10px 0 #0009;
+    background-color: #3f5681;
+    color: white;
+  }
+
+  .article {
+    background-color: #3f5681;
+    color: white;
+  }
+  .article h2 {
+    color: white;
+  }
+}
+
+/*# sourceMappingURL=light.css.map */

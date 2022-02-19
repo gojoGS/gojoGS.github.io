@@ -1,0 +1,55 @@
+$d-background-primary: #0f1520;
+$d-background-secondary: #3f5681;
+$d-text-primary: #0f1520;
+$d-text-secondary: #63779c;
+$d-text-header: #93a2be;
+
+@media (prefers-color-scheme: dark) {
+    html {
+        scrollbar-color: $d-background-secondary $d-background-primary;
+        &::-webkit-scrollbar {
+            background-color: $d-background-primary;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $d-background-secondary;
+        }
+    }
+
+    body {
+        background-color: $d-background-primary;
+    }
+
+    .clickable {
+        color: $d-text-primary;
+    }
+
+    .opening-image {
+        h1 {
+            color: $d-text-header;
+        }
+    }
+
+    .icon-tabler-arrow-bar-down {
+        color: $d-text-header;
+        &:hover {
+            color: $d-text-secondary;
+        }
+    }
+
+    .nav-item {
+        color: $d-text-secondary;
+        &:hover {
+            box-shadow: 0 4px 10px 0 #0009;
+            background-color: $d-background-secondary;
+            color: $d-text-primary;
+        }
+    }
+
+    .article {
+        background-color: $d-background-secondary;
+        color: $d-text-primary;
+        h2 {
+            color: $d-text-header;
+        }
+    }
+}
