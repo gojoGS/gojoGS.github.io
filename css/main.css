@@ -10,6 +10,14 @@
     color: #d28450;
   }
 }
+@keyframes down-icon-hover {
+  from {
+    color: white;
+  }
+  to {
+    color: #63779c;
+  }
+}
 body {
   display: flex;
   flex-direction: column;
@@ -19,6 +27,7 @@ body {
 html {
   scrollbar-color: #be8863 #302920;
   scrollbar-width: auto;
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
   background-color: #302920;
@@ -34,13 +43,32 @@ html::-webkit-scrollbar-thumb {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .opening-image h1 {
   color: white;
   font-size: 10vh;
   font-family: "Montserrat";
   align-self: flex-end;
+  padding: 1rem;
+}
+.opening-image #down-icon {
+  display: inline-flex;
+}
+.opening-image .icon-tabler-arrow-bar-down {
+  color: white;
+}
+.opening-image .icon-tabler-arrow-bar-down:hover {
+  animation-name: down-icon-hover;
+  animation-duration: 0.5s;
+  color: #63779c;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
 }
 
 nav {
@@ -54,6 +82,7 @@ nav .container {
   background-color: rgba(190, 136, 99, 0.6);
   justify-content: center;
   align-items: flex-start;
+  flex-direction: column;
 }
 nav .container li {
   cursor: pointer;
@@ -64,6 +93,7 @@ nav .container li {
   color: #be8863;
   border-radius: 1rem;
   padding: 1rem;
+  font-size: 5vh;
 }
 nav .container li:hover {
   animation-name: button-hover;
@@ -78,8 +108,7 @@ nav * {
 }
 
 main {
-  margin: auto;
-  margin-top: 2rem;
+  margin: 2rem;
   width: 80%;
   flex: 4;
 }
@@ -96,12 +125,12 @@ main {
 }
 .article h2 {
   color: #be8863;
-  font-size: 2vw;
+  font-size: 8vh;
 }
 .article p {
-  font-size: 1vw;
   color: white;
-  line-height: 2rem;
+  font-size: 6vh;
+  line-height: 6vh;
   text-align: justify;
 }
 
