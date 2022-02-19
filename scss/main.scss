@@ -1,6 +1,9 @@
 $et-primary: #63779c;
 $et-primary-dark: #3f5681;
 $et-primary-light: #c1cadc;
+$et-secondary: #64ac8e;
+$et-secondary-dark: #3e916d;
+$et-secondary-light: #c7e7d9;
 $et-bg: #213964;
 $ease-out: linear-gradient(
     to top,
@@ -26,10 +29,13 @@ $ease-out: linear-gradient(
 
 @keyframes button-hover {
     from {
-        background-color: $et-primary;
+        background-color: white;
+        color: $et-primary;
+        box-shadow: 0 0 0 0 #0000;
     }
     to {
         background-color: $et-primary-dark;
+        color: white;
         box-shadow: 0 4px 10px 0 #0009;
     }
 }
@@ -43,23 +49,53 @@ $ease-out: linear-gradient(
     }
 }
 
+@keyframes link-hover {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 html {
-    scrollbar-color: white $et-bg;
+    font-family: "Montserrat";
+    scrollbar-color: $et-primary-dark white;
     scrollbar-width: auto;
     &::-webkit-scrollbar {
-        background-color: $et-bg;
-    }
-    &::-webkit-scrollbar-thumb {
         background-color: white;
     }
+    &::-webkit-scrollbar-thumb {
+        background-color: $et-primary-dark;
+    }
     scroll-behavior: smooth;
+    a {
+        text-decoration: none;
+        &:visited {
+            color: inherit;
+        }
+    }
 }
 
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: $et-primary;
+    background-color: white;
+}
+
+.clickable {
+    font-weight: 600;
+    color: white;
+
+    &:hover {
+        animation-name: link-hover;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
 }
 
 .opening-image {
@@ -76,7 +112,6 @@ body {
         text-align: center;
         color: white;
         font-size: 10vh;
-        font-family: "Montserrat";
         align-self: flex-end;
         padding: 1rem;
     }
@@ -110,10 +145,9 @@ nav {
         flex-direction: column;
         li {
             cursor: pointer;
-            font-family: "Montserrat";
             list-style-type: none;
             text-align: center;
-            color: white;
+            color: $et-primary;
             border-radius: 1rem;
             padding: 1rem;
             font-size: 5vh;
@@ -122,6 +156,7 @@ nav {
                 animation-duration: 0.5s;
                 box-shadow: 0 4px 10px 0 #0009;
                 background-color: $et-primary-dark;
+                color: white;
             }
         }
     }
@@ -138,19 +173,17 @@ main {
 .article {
     padding: 1rem;
     border-radius: 1rem;
-    background-color: $et-primary-light;
-    font-family: "Montserrat";
+    background-color: $et-primary-dark;
     margin-bottom: 2rem;
-    &::first-letter {
-        font-size: 2vw;
-    }
+    color: white;
+    font-size: 6vh;
     h2 {
-        color: $et-primary-dark;
+        color: white;
         font-size: 8vh;
+        line-height: 8vh;
+        margin: 1rem 0;
     }
     p {
-        color: $et-primary;
-        font-size: 6vh;
         line-height: 6vh;
         text-align: justify;
     }

@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap");
 @keyframes button-hover {
   from {
-    background-color: #63779c;
+    background-color: white;
+    color: #63779c;
+    box-shadow: 0 0 0 0 #0000;
   }
   to {
     background-color: #3f5681;
+    color: white;
     box-shadow: 0 4px 10px 0 #0009;
   }
 }
@@ -16,23 +19,51 @@
     color: #63779c;
   }
 }
+@keyframes link-hover {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 html {
-  scrollbar-color: white #213964;
+  font-family: "Montserrat";
+  scrollbar-color: #3f5681 white;
   scrollbar-width: auto;
   scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
-  background-color: #213964;
+  background-color: white;
 }
 html::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: #3f5681;
+}
+html a {
+  text-decoration: none;
+}
+html a:visited {
+  color: inherit;
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  background-color: #63779c;
+  background-color: white;
+}
+
+.clickable {
+  font-weight: 600;
+  color: white;
+}
+.clickable:hover {
+  animation-name: link-hover;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .opening-image {
@@ -50,7 +81,6 @@ body {
   text-align: center;
   color: white;
   font-size: 10vh;
-  font-family: "Montserrat";
   align-self: flex-end;
   padding: 1rem;
 }
@@ -85,10 +115,9 @@ nav .container {
 }
 nav .container li {
   cursor: pointer;
-  font-family: "Montserrat";
   list-style-type: none;
   text-align: center;
-  color: white;
+  color: #63779c;
   border-radius: 1rem;
   padding: 1rem;
   font-size: 5vh;
@@ -98,6 +127,7 @@ nav .container li:hover {
   animation-duration: 0.5s;
   box-shadow: 0 4px 10px 0 #0009;
   background-color: #3f5681;
+  color: white;
 }
 nav * {
   margin: 1rem;
@@ -111,20 +141,18 @@ main {
 .article {
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #c1cadc;
-  font-family: "Montserrat";
+  background-color: #3f5681;
   margin-bottom: 2rem;
-}
-.article::first-letter {
-  font-size: 2vw;
+  color: white;
+  font-size: 6vh;
 }
 .article h2 {
-  color: #3f5681;
+  color: white;
   font-size: 8vh;
+  line-height: 8vh;
+  margin: 1rem 0;
 }
 .article p {
-  color: #63779c;
-  font-size: 6vh;
   line-height: 6vh;
   text-align: justify;
 }
